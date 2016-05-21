@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Project Tracker</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,10 +21,10 @@
   </head>
   <body>
     <nav class="navbar">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">                
                 <a class="navbar-brand">
-                    PROJECT TRACKER
+                    <b>PROJECT</b> TRACKER
                 </a>
             </div>
 
@@ -35,10 +36,7 @@
                     </li>
                     <li>
                         <a class="nav-button" href="#download">PERFIL</a>
-                    </li>
-                    <li>
-                        <a class="nav-button" href="#contact">INVITACIONES</a>
-                    </li>
+                    </li>                    
                 </ul>
             </div>
 
@@ -46,31 +44,61 @@
         </div>  
     </nav>
     <div class="page-header-custom">
-      <div class="container">
-        
+      <div class="container-fluid">   
+        <div class="col-sm-8">     
+            <h3 id="project-title">Project Title</h3>         
+            <h5 id="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5> 
+        </div>       
       </div>
     </div>
     <div class="main-content-wrapper">
         <div class="container-fluid">
             <div class="col-sm-4 panel-wrapper">
             <div class="panel panel-default panel-custom">
-                <div class="panel-heading panel-heading-custom">Tareas</div>
-                <div class="panel-body">Panel Content</div>
+                <div class="panel-heading panel-heading-custom">TAREAS</div>
+                <div class="panel-body">
+                    <div class="task-wrapper">
+                    </div>
+                    <div class="task-wrapper">
+                    </div>
+                    <div class="task-wrapper">
+                    </div>
+
+
+                </div>
             </div>
             </div>
             <div class="col-sm-4 panel-wrapper">
             <div class="panel panel-default panel-custom">
-                <div class="panel-heading panel-heading-custom">En proceso</div>
-                <div class="panel-body">Panel Content</div>
+                <div class="panel-heading panel-heading-custom">EN PROCESO</div>
+                <div class="panel-body">
+                <div class="task-wrapper">
+                    </div>
+                    <div class="task-wrapper">
+                    </div>
+                    <div class="task-wrapper">
+                    </div>
+                </div>
             </div>
             </div>
             <div class="col-sm-4 panel-wrapper">
             <div class="panel panel-default panel-custom">
-                <div class="panel-heading panel-heading-custom">Completadas</div>
-                <div class="panel-body">Panel Content</div>
+                <div class="panel-heading panel-heading-custom">COMPLETADAS</div>
+                <div class="panel-body">
+                <div class="task-wrapper">
+                    </div>
+                    <div class="task-wrapper">
+                    </div>
+                    <div class="task-wrapper">
+                    </div>
+                </div>
             </div>
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+
     </div>
 
     
