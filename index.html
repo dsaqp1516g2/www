@@ -20,6 +20,10 @@
     <![endif]-->
   </head>
   <body>
+    <script type='text/javascript'>
+      if(sessionStorage["userid"] == null)
+        window.location.href = "login.html";
+    </script>
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">                
@@ -47,7 +51,7 @@
             <h5 id="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5> 
         </div>
         <div class="pull-right" id="user-info" style="padding:5px; text-align:right;">
-        <p>Estás identificado como <b><span id="username" style></span>,</b><a href="#"> Logout</a> </p>
+        <p>Estás identificado como <b><span id="username" style></span>,</b><a id="logout"> Logout</a> </p>
         <div id="main-botones">
             <button type="submit" class="btn btn-info btn-default" data-dismiss="modal">Guardar cambios</button> 
             <button type="submit" class="btn btn-info btn-default" data-dismiss="modal">Guardar cambios</button> 

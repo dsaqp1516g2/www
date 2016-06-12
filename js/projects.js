@@ -4,6 +4,7 @@ var USER_FULLNAME;
 var USER_LOGINID;
 
 $(document).ready(function(){
+	
 	listarProyectos();
 	mostrarNombreUsuario();
 
@@ -138,22 +139,26 @@ function listarTasks(tasks) {
 				$('#add-item-container').hide();
 			}
 
+			$( "#add-item-form" ).unbind();
 			$( "#add-item-form" ).submit(function( event ) {
 				event.preventDefault();
-
+				this.disabled = true;
 				addItem(CURRENT_PROYECTO.id,tasks[taskid].id,$('#item-title').val(), function() {
-					$('#task-modal').modal('toggle');			  		
+					loadItems(CURRENT_PROYECTO.id, tasks[taskid].id, function(items) {
+						listarItems(items, tasks[taskid].id);			  	 
+					});	  		
 				});
 			});
 
+			$( "#change-task-state" ).unbind();
 			$( "#change-task-state" ).submit(function( event ) {
 				event.preventDefault();
 				
 				updateTaskState(CURRENT_PROYECTO.id, tasks[taskid].id, $("#task-state-select").val(), function(task){
-						$('#task-modal').modal('toggle');	
-						loadTasks(CURRENT_PROYECTO.id, function(tasks) {
-							listarTasks(tasks);
-						});				  		
+					$('#task-modal').modal('toggle');	
+					loadTasks(CURRENT_PROYECTO.id, function(tasks) {
+						listarTasks(tasks);
+					});				  		
 				});
 			});
 
@@ -188,7 +193,7 @@ function listarItems(pitems, taskid) {
 $( "#create-project-form" ).submit(function( event ) {
   event.preventDefault();
   createProject($("#name").val(), $("#description").val(), $("#githubUser").val(), $("#githubRepo").val(), function(project){
-  		$("#create-project-modal").modal('toggle');
+  		$('#create-project-modal').modal('toggle');
   		listarProyectos(project);
   });
 });
@@ -196,7 +201,7 @@ $( "#create-project-form" ).submit(function( event ) {
 $( "#create-task-form" ).submit(function( event ) {
   event.preventDefault();
   createTask(CURRENT_PROYECTO.id, $("#createTask-title").val(), $("#createTask-description").val(), function(task){
-  		$("#create-task-modal").modal('toggle');
+  		$('#create-task-modal').modal('toggle');
   		cargarProyecto(CURRENT_PROYECTO.id, function(proyecto) {
 		  	mostrarProyecto(proyecto);
 	  	});
@@ -207,11 +212,17 @@ $( "#add-member-form" ).submit(function( event ) {
   event.preventDefault();
   $('#add_member_fail').text("");
   $('#add_member_success').text("");
-  addMember(CURRENT_PROYECTO.id, $("#member-name").val(), function(task){
-  		
+  addMember(CURRENT_PROYECTO.id, $("#member-name").val(), function(task){  		
   		
   });
 });
+
+$("#logout").click(function(event) {
+	event.preventDefault();
+	logout( function() {
+		window.location.replace('login.html');
+	})
+})
 
 
 

@@ -16,6 +16,7 @@ function login(loginid, password, complete){
 			var code = jqXHR.status;
 			if(code == 400)
 			{
+        $('#ok').text('');
 				$('#errores').text("Usuario o contraseña incorrectos");
 			}
 
@@ -39,6 +40,7 @@ function register(fullname, loginid, password, email, githubUsername, githubPass
 			complete();
 		}).fail(function(jqXHR, textStatus, errorThrown){
 			var code = jqXHR.status;
+      $('#ok').text('');
 			if(code == 400)
 			{
 				$('#errores').text("Tus datos de github son incorrectos");
@@ -301,4 +303,20 @@ function updateTaskState(projectid, taskid, state, complete) {
     }).fail(function(jqXHR, textStatus, errorThrown){ 
       console.log("Error en updateTaskState");
     });
+}
+
+function logout(complete){
+  var token = sessionStorage["auth-token"].replace(/\"/g, "");  
+  var uri = BASE_URI + "/login";  
+  $.ajax({
+      type: 'DELETE',
+      url: uri,
+      headers: {
+          "X-Auth-Token":token
+      }
+    }).done(function(data) {      
+      sessionStorage.removeItem("auth-token");
+      sessionStorage.removeItem("userid");
+      complete();
+    }).fail(function(){});
 }

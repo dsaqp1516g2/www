@@ -66,17 +66,24 @@ html, body {
 }
 
 .task-wrapper {
-	height: 50px;
+	min-height: 50px;
 	border-bottom: 1px solid #b3b3b3;
 	margin: 0px;
 	padding: 10px;
+	font-weight: bold;
+	
+	
 }
 .panel-body {
 	margin: 0px;
 	padding: 0px;
 	min-height: 50px;
+	background-color: #f2f2f2;
 }
 
+#logout:hover {
+	cursor:pointer;
+}
 
 
 
