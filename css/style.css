@@ -1,5 +1,7 @@
 
-
+html, body {
+	height: 100%;
+}
 .navbar {
 	border-radius: 0px;
 	border-color: #004d99;
@@ -21,6 +23,7 @@
 
 .main-content-wrapper {
 	width: 100%;
+	min-height: 80%;
 }
 
 .panel-wrapper {
@@ -49,6 +52,10 @@
 	font-family: sans-serif;
 	text-shadow: 0px 1px 1px black;
 }
+.nav-button:hover {
+	background-color: #004d99 !important;
+	text-shadow: 0px 3px 3px black;
+}
 
 #project-title {
 	text-shadow: 0px 2px 2px white;
@@ -62,20 +69,46 @@
 	height: 50px;
 	border-bottom: 1px solid #b3b3b3;
 	margin: 0px;
+	padding: 10px;
 }
 .panel-body {
 	margin: 0px;
 	padding: 0px;
+	min-height: 50px;
 }
 
-.main-content-wrapper {
-	height: 500px;
-}
+
 
 
 .footer {
-	border-top: 1px solid black;
-	height: 100px;
+	border-top: 7px solid #004d99;	
+	color: #fff;
+	background: #333;
+	font-family: 'Montserrat', sans-serif;
+	text-shadow: 0px 1px 1px black;
+	text-align: center;
+	min-height:50px;
+
 }
+
+.modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+}
+.modal-header {
+	min-height: 80px;
+	height: 100%;
+}
+.modal-footer {
+	background-color: #f9f9f9;
+}
+
+#user-info p{
+	font-size: 12px;
+	padding-top:5px;
+}
+
 
 

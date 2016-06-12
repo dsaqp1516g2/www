@@ -32,11 +32,8 @@
             <div class="navbar-right">
                 <ul class="nav navbar-nav">                                   
                     <li>
-                        <a class="nav-button" href="#about">PROYECTOS</a>
-                    </li>
-                    <li>
-                        <a class="nav-button" href="#download">PERFIL</a>
-                    </li>                    
+                        <a class="nav-button" href="index.html">VER LISTA DE PROYECTOS</a>
+                    </li>                                       
                 </ul>
             </div>
 
@@ -48,57 +45,156 @@
         <div class="col-sm-8">     
             <h3 id="project-title">Project Title</h3>         
             <h5 id="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5> 
-        </div>       
+        </div>
+        <div class="pull-right" id="user-info" style="padding:5px; text-align:right;">
+        <p>Estás identificado como <b><span id="username" style></span>,</b><a href="#"> Logout</a> </p>
+        <div id="main-botones">
+            <button type="submit" class="btn btn-info btn-default" data-dismiss="modal">Guardar cambios</button> 
+            <button type="submit" class="btn btn-info btn-default" data-dismiss="modal">Guardar cambios</button> 
+        </div>
+        </div> 
       </div>
     </div>
     <div class="main-content-wrapper">
-        <div class="container-fluid">
-            <div class="col-sm-4 panel-wrapper">
-            <div class="panel panel-default panel-custom">
-                <div class="panel-heading panel-heading-custom">TAREAS</div>
-                <div class="panel-body">
-                    <div class="task-wrapper">
-                    </div>
-                    <div class="task-wrapper">
-                    </div>
-                    <div class="task-wrapper">
-                    </div>
+        <div class="container-fluid" id="main-content">
+            
 
+            
 
-                </div>
-            </div>
-            </div>
-            <div class="col-sm-4 panel-wrapper">
-            <div class="panel panel-default panel-custom">
-                <div class="panel-heading panel-heading-custom">EN PROCESO</div>
-                <div class="panel-body">
-                <div class="task-wrapper">
-                    </div>
-                    <div class="task-wrapper">
-                    </div>
-                    <div class="task-wrapper">
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="col-sm-4 panel-wrapper">
-            <div class="panel panel-default panel-custom">
-                <div class="panel-heading panel-heading-custom">COMPLETADAS</div>
-                <div class="panel-body">
-                <div class="task-wrapper">
-                    </div>
-                    <div class="task-wrapper">
-                    </div>
-                    <div class="task-wrapper">
-                    </div>
-                </div>
-            </div>
-            </div>
+            
         </div>
+
     </div>
 
     <div class="footer">
+      <h5>Proyecto par la asignatura de DSA(Diseño de servicios y aplicaciones) - EETAC UPC - 15/16</h4>
+    </div>
 
+    <div id="task-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 id="modal-task-title">Login</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p class="pull-right text-right"><b>Creador: </b><span id="task-creator"></span><br><b> Fecha de creación: </b><span id="task-fecha"></span></p>                    
+                    <h3>Descripción de la tarea</h3>
+                    <p id="task-description"></p>                    
+                    <br>
+                    <table class="table table-condensed">
+                      <thead>
+                        <th class="col-sm-8">
+                          Subtarea
+                        </th>
+                        <th class="col-sm-4 text-center">
+                          Estado
+                        </th>
+                      </thead>
+                      <tbody id="task-items">
+                      </tbody>
+                    </table>
+                    <div id="add-item-container">
+                      <form role="form" id="add-item-form">
+                        <div class="form-group">
+                          <label for="item-title">Nombre de la subtarea</label>
+                          <input type="text" class="form-control" id="item-title" placeholder="Introduce un título para la tarea" required autofocus>
+                        </div>                                              
+                        <button type="submit" class="btn btn-success btn-block">Añadir item</button>
+                      </form>
+                      <form role="form" id="change-task-state" style="margin-top:50px;">
+                        <div class="form-group">
+                          <label for="task-state-select">Estado de la tarea</label>                          
+                          <select class="form-control" id="task-state-select" required>
+                            <option value="proposal">Propuesta</option>
+                            <option value="in_process">En proceso</option>
+                            <option value="completed">Completada</option>                            
+                          </select>
+                        </div>                                              
+                        <button type="submit" class="btn btn-success btn-block">Guardar estado</button>
+                      </form>
+
+                    </div>                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="create-project-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 id="modal-task-title">Crear nuevo proyecto</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form" id="create-project-form">
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" class="form-control" id="name" placeholder="Introduce el nombre del proyecto" required autofocus>
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Descripción</label>
+                          <input type="text" class="form-control" id="description" placeholder="Introduce una descripción">
+                        </div> 
+                        <div class="form-group">
+                          <label for="githubUser">Usuario de github</label>
+                          <input type="text" class="form-control" id="githubUser" placeholder="Usuario del dueño del repositorio github" required>
+                        </div>  
+                        <div class="form-group">
+                          <label for="githubRepo">Nombre del repositorio</label>
+                          <input type="text" class="form-control" id="githubRepo" placeholder="Nombre del repositorio GitHub" required>
+                        </div>                      
+                      <button type="submit" class="btn btn-success btn-block"> Crear proyecto</button>
+                    </form>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div id="create-task-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 id="modal-task-title">Crear nueva tarea</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form" id="create-task-form">
+                        <div class="form-group">
+                          <label for="createTask-title">Título</label>
+                          <input type="text" class="form-control" id="createTask-title" placeholder="Introduce el título de la tarea" required autofocus>
+                        </div>
+                        <div class="form-group">
+                          <label for="createTask-description">Descripción</label>
+                          <textarea class="form-control" id="createTask-description" placeholder="Introduce una descripción" rows="4"></textarea>
+                        </div>                                              
+                      <button type="submit" class="btn btn-success btn-block"> Crear tarea</button>
+                    </form>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div id="add-member-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 id="modal-add-member-title">Añadir miembro al proyecto</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form" id="add-member-form" style="margin-bottom:20px;">
+                        <div class="form-group">
+                          <label for="member-name">Nombre de usuario</label>
+                          <input type="text" class="form-control" id="member-name" placeholder="Introduce el nombre de usuario de la persona a la que quieres añadir" required autofocus>
+                        </div>                                                                     
+                      <button type="submit" class="btn btn-success">Añadir miembro</button>
+                    </form>
+                    <p class="text-success" id="add_member_success"></p>
+                    <p class="text-danger" id="add_member_fail"></p>  
+                </div> 
+                             
+            </div>
+        </div>
     </div>
 
     
@@ -107,5 +203,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/projects.js"></script>
   </body>
 </html>

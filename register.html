@@ -19,16 +19,22 @@
 			</div>
 			<div class="panel panel-default col-md-4 col-md-offset-4">
 				<div class="panel-body">
-					<form class="form-signin" id="form-signin">
-						
-						<label for="inputLoginid" class="sr-only">Username</label>
+					<form class="form-register" id="form-register">
+						<label for="inputFullname">Fullname</label>
+		        		<input type="text" id="inputFullname" class="form-control" placeholder="Fullname" required autofocus>
+						<label for="inputLoginid">Username</label>
 		        		<input type="text" id="inputLoginid" class="form-control" placeholder="Username" required autofocus>
-		        		<label for="inputPassword" class="sr-only">Password</label>
+		        		<label for="inputPassword">Password</label>
 		        		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-		        		<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-					</form>
-					<br>
-					<button class="btn btn-lg btn-primary btn-block" type="button">Registrar</button>
+		        		<label for="inputEmail">Correo electrónico</label>
+		        		<input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+		        		<label for="inputGithubUsername">Github username</label>
+		        		<input type="text" id="inputGithubUsername" class="form-control" placeholder="Gihub username" required>
+		        		<label for="inputGithubPassword">Github password</label>
+		        		<input type="password" id="inputGithubPassword" class="form-control" placeholder="Gihub password" required>
+		        		<button class="btn btn-lg btn-primary btn-block" type="submit">Crear usuario</button>
+					</form>			
+					
 					<p id="errores"><p>
 				</div>
 
@@ -39,7 +45,8 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>		
+		
 		<script src="js/api.js"></script>
-		<script src="js/login.js"></script>
+		<script src="js/register.js"></script>
 	</body>
 </html>
